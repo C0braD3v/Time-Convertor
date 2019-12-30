@@ -54,7 +54,7 @@ func main() {
 	for { // Keeps program running untill closed so the user can format multiple timestamps or timezones
 	scanner := bufio.NewScanner(os.Stdin) 
 	fmt.Println("------------")
-	fmt.Println("Please enter a timestamp in this format: \"dd.MM.yy HH:mm:SS Z\" (01/02/2006 15:04:00 MST)")
+	fmt.Println("Please enter a timestamp in this format: \"MM/dd/yyyy HH:mm:SS Z\" (01/02/2006 15:04:00 MST)")
 	fmt.Println("------------")
 	fmt.Print("> ")
 	if scanner.Scan() { // Reads date input
