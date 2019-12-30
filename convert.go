@@ -1,5 +1,6 @@
 package main
 
+// Packages needed for time, printing, and reading inputs
 import (
 	"bufio"
 	"fmt"
@@ -8,9 +9,9 @@ import (
 )
 
 const (
-	// Basic time formats i will be using throught the script
+	// Basic time formats used throught the script
 	layoutISO = "2006-01-02T15:04:05-0700"
-	layoutUS  = "02.01.06 15:04:00 MST"
+	layoutUS  = "01/02/2006 15:04:00 MST"
 	layoutTZ = "Monday, January 02, 2006 15:04:05 MST"
 )
 
@@ -34,7 +35,7 @@ func convert(date string) { // Main funcition to convert the timestamp
         fmt.Println("------------")
         return // Returns if the format is invalid
 	} else {
-	scanner1 := bufio.NewScanner(os.Stdin) 
+	scanner1 := bufio.NewScanner(os.Stdin)
 	fmt.Println("Please enter a timezone in this format: \"America/New_York\" (Supports all IANA timezone database zones)")
 	fmt.Println("------------")
 	fmt.Print("> ")
@@ -45,15 +46,15 @@ func convert(date string) { // Main funcition to convert the timestamp
 	fmt.Println("RFC1123:", t.Format(time.RFC1123)) // Prints RFC1123 timestamp
 	timezone("Local", date) // Prints local timestamp
 	timezone("UTC", date) // Prints UTC timestamp
-	timezone(scanner1.Text(), date) // Calls convert function on the entered input	
+	timezone(scanner1.Text(), date) // Calls timezone function on the entered timezone	
 }}}
 
 
 func main() {
-	for { // Keeps program running untill closed so the user can format multiple timestamps
+	for { // Keeps program running untill closed so the user can format multiple timestamps or timezones
 	scanner := bufio.NewScanner(os.Stdin) 
 	fmt.Println("------------")
-	fmt.Println("Please enter a timestamp in this format: \"dd.MM.yy HH:mm:SS Z\" (02.01.06 15:04:00 MST)")
+	fmt.Println("Please enter a timestamp in this format: \"dd.MM.yy HH:mm:SS Z\" (01/02/2006 15:04:00 MST)")
 	fmt.Println("------------")
 	fmt.Print("> ")
 	if scanner.Scan() { // Reads date input
