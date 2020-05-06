@@ -1,5 +1,5 @@
 # Time Convertor
-This was a super simple GO script I wrote to convert a timestamp to different formats and types, such as UNIX, ISO, RFC1123, Local, or any IANA Timezone Databse zone. This program was nothing serious, just a something quick i made while bored to get timestamps in diffrent timezones and formats.
+Convert timestamps to different formats, types, and timezones, such as UNIX, ISO, RFC1123, Local, or any IANA Timezone Database zone!
 
 # Installation
 ## Windows
